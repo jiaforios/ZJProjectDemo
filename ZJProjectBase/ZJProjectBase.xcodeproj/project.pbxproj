@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8427E115216DEBC700128949 /* ZJUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 8427E114216DEBC700128949 /* ZJUtilities.h */; };
 		84E8C6EC21609C810051D9F3 /* ZJProjectBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 84E8C6EA21609C810051D9F3 /* ZJProjectBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84E8C71921609CB00051D9F3 /* FBKVOController.h in Headers */ = {isa = PBXBuildFile; fileRef = 84E8C6F421609CB00051D9F3 /* FBKVOController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84E8C71A21609CB00051D9F3 /* FBKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E8C6F521609CB00051D9F3 /* FBKVOController.m */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8427E114216DEBC700128949 /* ZJUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJUtilities.h; sourceTree = "<group>"; };
 		84E8C6E721609C810051D9F3 /* ZJProjectBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZJProjectBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E8C6EA21609C810051D9F3 /* ZJProjectBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJProjectBase.h; sourceTree = "<group>"; };
 		84E8C6EB21609C810051D9F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		84E8C6E921609C810051D9F3 /* ZJProjectBase */ = {
 			isa = PBXGroup;
 			children = (
+				8427E114216DEBC700128949 /* ZJUtilities.h */,
 				84E8C73C21609D090051D9F3 /* ZJNavigationView.h */,
 				84E8C73B21609D090051D9F3 /* ZJNavigationView.m */,
 				84E8C71621609CB00051D9F3 /* UIViewController+NavigationView.h */,
@@ -193,6 +196,7 @@
 				84E8C71921609CB00051D9F3 /* FBKVOController.h in Headers */,
 				84E8C73921609CB00051D9F3 /* UIViewController+NavigationView.h in Headers */,
 				84E8C73721609CB00051D9F3 /* ViewController+MASAdditions.h in Headers */,
+				8427E115216DEBC700128949 /* ZJUtilities.h in Headers */,
 				84E8C72A21609CB00051D9F3 /* MASUtilities.h in Headers */,
 				84E8C73E21609D090051D9F3 /* ZJNavigationView.h in Headers */,
 				84E8C6EC21609C810051D9F3 /* ZJProjectBase.h in Headers */,

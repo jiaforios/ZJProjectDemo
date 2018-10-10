@@ -9,6 +9,8 @@
 #import "UIViewController+NavigationView.h"
 #import "ZJNavigationView.h"
 #import <objc/runtime.h>
+#import "ZJUtilities.h"
+
 
 @interface UIViewController () <ZJNavigationViewDelegate>
 
@@ -17,6 +19,7 @@
 @implementation UIViewController (NavigationView)
 
 - (void) setNagationView:(UIView *)nagationView{
+    
     NSAssert(nagationView, @"when set navigationView should not nil");
     objc_setAssociatedObject(self, @selector(nagationView), nagationView, OBJC_ASSOCIATION_RETAIN);
 }
@@ -24,7 +27,7 @@
 - (UIView *)nagationView{
     
     if (objc_getAssociatedObject(self, _cmd) == nil) {
-        ZJNavigationView *view = [[ZJNavigationView alloc] initWithFrame:CGRectMake(0, 0, 375, 64) viewController:self];
+        ZJNavigationView *view = [[ZJNavigationView alloc] initWithFrame:CGRectMake(0, 0, kZJScreenWidth,kBarTopHeight) viewController:self];
         view.backgroundColor = [UIColor whiteColor];
         view.title = self.title;
         objc_setAssociatedObject(self, @selector(nagationView), view, OBJC_ASSOCIATION_RETAIN);
@@ -76,10 +79,16 @@
     return objc_getAssociatedObject(self, _cmd);
 }
 
+
 - (void)zj_setLeftBarView:(UIView *)leftBarView{
     NSAssert([self.nagationView isMemberOfClass:[ZJNavigationView class]], @"已经自定义导航条，只有使用默认导航条时才能自定义bar视图");
     [(ZJNavigationView *)(self.nagationView) setCustomLeftBar:leftBarView];
     
+}
+
+- (void)zj_setMiddleBarView:(UIView *)middleBarView{
+    NSAssert([self.nagationView isMemberOfClass:[ZJNavigationView class]], @"已经自定义导航条，只有使用默认导航条时才能自定义bar视图");
+    [(ZJNavigationView *)(self.nagationView) setCustomMiddleBar:middleBarView];
 }
 
 - (void)zj_setRightBarView:(UIView *)rightBarView{
@@ -102,6 +111,13 @@
         return;
     }
     [(ZJNavigationView *)(self.nagationView) setCustomRightBars:rightBarViews];
+}
+
+
+-(void)zj_setMiddleTitleFont:(UIFont *)font{
+    NSAssert([self.nagationView isMemberOfClass:[ZJNavigationView class]], @"已经自定义导航条，只有使用默认导航条时才能自定义设置");
+    ((ZJNavigationView *) self.nagationView).titleFont = font;
+
 }
 
 // 渐变，隐藏

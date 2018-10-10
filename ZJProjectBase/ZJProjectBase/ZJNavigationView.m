@@ -15,21 +15,15 @@
 #import "ZJNavigationView.h"
 #import "KVOController/NSObject+FBKVOController.h"
 #import "Masonry/Masonry.h"
+#import "ZJUtilities.h"
 
-#define kBarBackgroundViewEdgeLeft 5
-#define kBarBackgroundViewEdgeTop 20
-#define kBarHeight 44
-#define kBarTitleWidth 150
 
 @interface ZJNavigationView ()
 
 @property(nonatomic, strong) UIView *leftBar;
 @property(nonatomic, strong) UIView *middleBar;
 @property(nonatomic, strong) UIView *rightBar;
-
-
 @property(nonatomic, strong) UIView *barBackgroundView;
-
 
 @end
 
@@ -39,14 +33,11 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         
-        
         [self setLeftDefaultView];
         [self setMiddleDefaultView];
         [self setRightDefaultView];
         [self masnory];
-        
         [self addSubview:self.barBackgroundView];
-        
         [self observeBars];
 
     }
@@ -125,6 +116,16 @@
 - (void)setTitle:(NSString *)title{
     // 设置中间控件的 title
     ((UILabel *)self.middleBar).text = title;
+}
+
+- (void)setTitleFont:(UIFont *)titleFont{
+    ((UILabel *)self.middleBar).font = titleFont;
+}
+
+- (void)setTitleAttr:(NSDictionary *)titleAttr{
+    
+    UILabel *label =(UILabel *)self.middleBar;
+    label.attributedText = [[NSAttributedString alloc] initWithString:label.text attributes:titleAttr];
 }
 
 - (UIView *)barBackgroundView{

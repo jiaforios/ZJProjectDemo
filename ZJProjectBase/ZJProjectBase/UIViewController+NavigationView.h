@@ -13,23 +13,53 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (NavigationView)
 
+//导航视图
+
 @property(nonatomic, strong) UIView *nagationView;
+
+//controller 标题
 @property(nonatomic, copy) NSString * vcTitle;
 
-// default
+/*
+ 设置默认导航视图
+ */
 - (void)zj_setDefaultNavigationView;
 
-// custom
+/*
+ 自定义导航视图
+ */
 - (void)zj_setCustomNavigationView:(nullable UIView *)navigationView;
 
+/*
+ 自定义导航左视图
+ */
 - (void)zj_setLeftBarView:(nullable UIView *)leftBarView;
 
+/*
+ 自定义导航中视图
+ */
+- (void)zj_setMiddleBarView:(nullable UIView *)middleBarView;
+
+/*
+ 自定义导航右视图
+ */
 - (void)zj_setRightBarView:(nullable UIView *)rightBarView;
 
-// 组
+/*
+ 自定义导航左视图组
+ */
 - (void)zj_setLeftBarViews:(nullable NSArray *)leftBarViews;
 
+/*
+ 自定义导航中视图组
+ */
+- (void)zj_setMiddleTitleFont:(UIFont *)font;
+
+/*
+ 自定义导航右视图组
+ */
 - (void)zj_setRightBarViews:(nullable NSArray *)rightBarViews;
+
 
 
 
